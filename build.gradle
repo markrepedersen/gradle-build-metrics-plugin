@@ -1,3 +1,5 @@
+import listeners.BuildMetricsTaskListener
+
 plugins {
     id 'base'
     id 'groovy'
@@ -7,6 +9,4 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.7'
-}
+gradle.addListener(new BuildMetricsTaskListener())
